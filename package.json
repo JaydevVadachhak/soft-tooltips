@@ -1,0 +1,39 @@
+{
+  "name": "@softheartengineer/soft-tooltips",
+  "version": "1.0.0",
+  "description": "Simple tooltips module",
+  "keywords": [
+    "typescript",
+    "tooltips"
+  ],
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "ci": "npm run build && npm run check-format && npm run check-exports && npm run test",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "check-exports": "attw --pack .",
+    "test": "vitest run",
+    "dev:test": "vitest"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "JaydevVadachhak",
+    "email": "JaydevVadachhak@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaydevVadachhak/soft-tooltips"
+  },
+  "bugs": {
+    "url": "https://github.com/JaydevVadachhak/soft-tooltips/issues"
+  },
+  "homepage": "https://github.com/JaydevVadachhak/soft-tooltips",
+  "type": "module",
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.3"
+  }
+}
