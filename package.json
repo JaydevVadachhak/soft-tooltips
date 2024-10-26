@@ -1,12 +1,13 @@
 {
   "name": "@softheartengineer/soft-tooltips",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple tooltips module",
   "keywords": [
     "typescript",
     "tooltips"
   ],
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "ci": "npm run build && npm run check-format && npm run check-exports-ignore-cjs && npm run test",
@@ -36,7 +37,9 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
     "@changesets/cli": "^2.27.9",
+    "@types/node": "^22.8.1",
     "prettier": "^3.3.3",
+    "tslib": "^2.8.0",
     "typescript": "^5.6.3",
     "vitest": "^2.1.3"
   }
