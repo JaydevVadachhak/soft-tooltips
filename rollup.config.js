@@ -8,6 +8,5 @@ export default defineConfig({
     format: 'es',
     name: '@softheartengineer/soft-tooltips',
   },
-  //   external: ["react", "react-dom"],
   plugins: [typescript({ tsconfig: 'tsconfig.json' })],
 });

@@ -1,53 +1,13 @@
 {
   "compilerOptions": {
-    /* Base Options: */
-    "esModuleInterop": true,
-    "skipLibCheck": true,
     "target": "ES2020",
-    "allowJs": true,
-    // "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "isolatedModules": true,
-    "verbatimModuleSyntax": true,
-
-    /* Strictness */
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true,
-
-    /* If transpiling with TypeScript: */
     "module": "ESNext",
-    "outDir": "dist",
-    "rootDir": "src",
-    "sourceMap": true,
-
-    /* AND if you're building for a library: */
     "declaration": true,
     "declarationDir": "dist",
-
-    /* AND if you're building for a library in a monorepo: */
-    "declarationMap": true
+    "outDir": "dist",
+    "strict": true,
+    "moduleResolution": "Node"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
-
-// {
-//   "compilerOptions": {
-//     // "target": "ES6",
-//     // "module": "ES6",
-//     "target": "ES2020",
-//     "module": "ESNext",
-//     "declaration": true,
-//     "declarationDir": "dist",
-//     "outDir": "dist",
-//     "strict": true,
-//     "esModuleInterop": true,
-//     "skipLibCheck": true,
-//     "forceConsistentCasingInFileNames": true,
-//     "moduleResolution": "node",
-//     "sourceMap": true
-//   },
-//   "include": ["src/**/*"],
-//   "exclude": ["node_modules", "dist"]
-// }
