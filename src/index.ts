@@ -1,2 +1,2 @@
-export * from './utils.js';
+export * from './utilities/utils.js';
 export * from './Tooltip.js';

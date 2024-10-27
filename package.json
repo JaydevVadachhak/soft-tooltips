@@ -6,8 +6,7 @@
     "typescript",
     "tooltips"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/es/index.mjs",
   "scripts": {
     "build": "npx rollup -c",
     "ci": "npm run build && npm run check-format && npm run test",
