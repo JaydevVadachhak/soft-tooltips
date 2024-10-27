@@ -9,8 +9,8 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "ci": "npm run build && npm run check-format && npm run check-exports-ignore-cjs",
+    "build": "npx rollup -c",
+    "ci": "npm run build && npm run check-format && npm run check-exports-ignore-cjs && npm run test",
     "format": "prettier --write .",
     "check-format": "prettier --check .",
     "check-exports": "attw --pack .",
