@@ -1,12 +1,27 @@
 import { TooltipContent } from './types/TooltipContent';
 
 class Tooltip {
-  constructor() {}
+  /**
+   * Tooltip CSS classes
+   */
+  private get CSS() {
+    return {
+      tooltip: 'st',
+      tooltipContent: 'st__content',
+      tooltipShown: 'st--shown',
+      placement: {
+        left: 'st--left',
+        bottom: 'st--bottom',
+        right: 'st--right',
+        top: 'st--top',
+      },
+    };
+  }
 
   /**
    * Module nodes
    */
-  private nodes: {
+  private readonly nodes: {
     content: HTMLElement | null;
     wrapper: HTMLElement | null;
   } = {
@@ -37,9 +52,10 @@ class Tooltip {
    */
   public show(element: HTMLElement, content: TooltipContent): void {
     this.nodes.wrapper?.remove();
-    this.nodes.wrapper = this.make('div', 'st');
-    this.nodes.content = this.make('div', 'st__content');
+    this.nodes.wrapper = this.make('div', this.CSS.tooltip);
+    this.nodes.content = this.make('div', this.CSS.tooltipContent);
     this.nodes.wrapper.appendChild(this.nodes.content);
+    this.nodes.wrapper.classList.add(this.CSS.tooltipShown);
     document.body.appendChild(this.nodes.wrapper);
     if (typeof content === 'string') {
       this.nodes.content?.appendChild(document.createTextNode(content));
@@ -59,6 +75,7 @@ class Tooltip {
    * Hide toolbox tooltip and clean content
    */
   public hide(): void {
+    this.nodes.wrapper?.classList.remove(this.CSS.tooltipShown);
     this.nodes.wrapper?.remove();
   }
 
@@ -72,12 +89,18 @@ class Tooltip {
   private make(
     tagName: string,
     classNames: string | string[] | null = null,
+    attributes: any = {},
   ): HTMLElement {
     const el: any = document.createElement(tagName);
     if (Array.isArray(classNames)) {
       el.classList.add(...classNames);
     } else if (classNames) {
       el.classList.add(classNames);
+    }
+    for (const attrName in attributes) {
+      if (attributes.hasOwnProperty(attrName)) {
+        el[attrName] = attributes[attrName];
+      }
     }
     return el;
   }

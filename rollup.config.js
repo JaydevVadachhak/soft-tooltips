@@ -21,6 +21,11 @@ export default defineConfig({
       format: 'iife',
       name: 'softTooltips',
     },
+    {
+      file: 'dist/bundle.umd.js',
+      format: 'umd',
+      name: 'softTooltips',
+    },
   ],
   plugins: [typescript({ tsconfig: 'tsconfig.json' })],
 });

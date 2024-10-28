@@ -3,7 +3,8 @@
     "target": "ES2020",
     "module": "ESNext",
     "strict": true,
-    "moduleResolution": "Node"
+    "moduleResolution": "Node",
+    "lib": ["dom", "es2017", "es2018"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
