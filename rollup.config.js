@@ -1,5 +1,6 @@
 import { defineConfig } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
 
 export default defineConfig({
   input: 'src/index.ts',
@@ -27,5 +28,11 @@ export default defineConfig({
       name: 'softTooltips',
     },
   ],
-  plugins: [typescript({ tsconfig: 'tsconfig.json' })],
+  plugins: [
+    typescript({ tsconfig: 'tsconfig.json' }),
+    postcss({
+      extract: false, // Optional: extracts CSS to a separate file instead of inline
+      minimize: true, // Optional: minifies CSS
+    }),
+  ],
 });

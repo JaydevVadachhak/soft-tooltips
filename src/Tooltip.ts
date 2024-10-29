@@ -1,4 +1,5 @@
 import { TooltipContent } from './types/TooltipContent';
+import './styles/main.css';
 
 class Tooltip {
   /**
@@ -8,13 +9,6 @@ class Tooltip {
     return {
       tooltip: 'st',
       tooltipContent: 'st__content',
-      tooltipShown: 'st--shown',
-      placement: {
-        left: 'st--left',
-        bottom: 'st--bottom',
-        right: 'st--right',
-        top: 'st--top',
-      },
     };
   }
 
@@ -55,7 +49,6 @@ class Tooltip {
     this.nodes.wrapper = this.make('div', this.CSS.tooltip);
     this.nodes.content = this.make('div', this.CSS.tooltipContent);
     this.nodes.wrapper.appendChild(this.nodes.content);
-    this.nodes.wrapper.classList.add(this.CSS.tooltipShown);
     document.body.appendChild(this.nodes.wrapper);
     if (typeof content === 'string') {
       this.nodes.content?.appendChild(document.createTextNode(content));
@@ -69,13 +62,26 @@ class Tooltip {
           ' given.',
       );
     }
+    this.positionTooltip(element, this.nodes.wrapper);
+  }
+
+  /**
+   * position tooltip to the element
+   */
+  private positionTooltip(
+    targetElement: HTMLElement,
+    tooltipElement: HTMLElement,
+  ): void {
+    const targetRect = targetElement.getBoundingClientRect();
+    tooltipElement.style.position = 'absolute';
+    tooltipElement.style.top = `${window.scrollY + targetRect.bottom}px`;
+    tooltipElement.style.left = `${window.scrollX + targetRect.left}px`;
   }
 
   /**
    * Hide toolbox tooltip and clean content
    */
   public hide(): void {
-    this.nodes.wrapper?.classList.remove(this.CSS.tooltipShown);
     this.nodes.wrapper?.remove();
   }
 
