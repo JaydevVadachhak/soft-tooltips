@@ -31,8 +31,11 @@ export default defineConfig({
   plugins: [
     typescript({ tsconfig: 'tsconfig.json' }),
     postcss({
-      extract: false, // Optional: extracts CSS to a separate file instead of inline
-      minimize: true, // Optional: minifies CSS
+      extract: false,
+      inject: true,
+      minimize: true,
+      extensions: ['.css'],
+      modules: false,
     }),
   ],
 });

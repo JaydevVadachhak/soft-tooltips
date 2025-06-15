@@ -1,6 +1,6 @@
 {
   "name": "@softheartengineer/soft-tooltips",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Simple tooltips module",
   "keywords": [
     "typescript",
@@ -17,7 +17,8 @@
     "test": "vitest run",
     "dev:test": "vitest",
     "local-release": "changeset version && changeset publish",
-    "prepublishOnly": "npm run ci"
+    "prepublishOnly": "npm run ci",
+    "serve": "npx serve"
   },
   "license": "MIT",
   "author": {
