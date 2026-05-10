@@ -22,8 +22,10 @@ jobs:
         with:
           node-version: '20.17.0'
 
-      - name: Install dependencies
-        run: npm install
+      - name: Clear npm cache and reinstall dependencies
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install
 
       - name: Run CI
         run: npm run ci
